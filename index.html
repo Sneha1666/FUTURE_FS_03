@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMV Aroma Cafe | Visakhapatnam</title>
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+:root{
+    --coffee:#6f4e37;
+    --cream:#f5eee6;
+    --dark:#2b1d16;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--cream);
+    color:var(--dark);
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 40px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    z-index:1000;
+}
+
+/* LOGO */
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-img{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.logo-text{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--coffee);
+}
+
+/* NAV LINKS */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:var(--coffee);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1400&auto=format&fit=crop");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:750px;
+    animation:fadeIn 1.5s ease;
+}
+
+.hero-logo{
+    width:150px;
+    margin-bottom:20px;
+    border-radius:50%;
+    box-shadow:0 5px 20px rgba(255,255,255,0.3);
+    animation:float 3s infinite ease-in-out;
+}
+
+.hero h1{
+    font-size:65px;
+    animation:slideUp 1.2s ease;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:20px;
+    line-height:1.6;
+    animation:fadeIn 2s ease;
+}
+
+.hero-btn{
+    margin-top:25px;
+    padding:14px 24px;
+    border:none;
+    background:var(--coffee);
+    color:white;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.hero-btn:hover{
+    background:#543827;
+    transform:scale(1.05);
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:90px 10%;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:40px;
+    color:var(--coffee);
+}
+
+/* ================= STORY ================= */
+
+.story{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    line-height:1.9;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    font-size:17px;
+    animation:fadeIn 1s ease;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.search-box input{
+    width:60%;
+    padding:14px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+/* ================= MENU ================= */
+
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.4s;
+    animation:fadeIn 1s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.price{
+    color:var(--coffee);
+    font-weight:bold;
+    margin-top:8px;
+    font-size:18px;
+}
+
+.card button{
+    margin-top:15px;
+    padding:10px 16px;
+    border:none;
+    background:var(--coffee);
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card button:hover{
+    background:#543827;
+    transform:scale(1.05);
+}
+
+/* ================= CART ================= */
+
+.cart{
+    margin-top:35px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    font-size:17px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ================= REVIEWS ================= */
+
+.review{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.review-form{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-top:30px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.review-form input,
+.review-form textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.review-form button{
+    padding:12px 18px;
+    border:none;
+    background:var(--coffee);
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* ================= VISIT ================= */
+
+.visit-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.visit-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+    line-height:2;
+}
+
+iframe{
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:15px;
+}
+
+/* ================= INSTAGRAM ================= */
+
+.instagram{
+    text-align:center;
+    margin-top:30px;
+}
+
+.instagram a{
+    text-decoration:none;
+    background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);
+    color:white;
+    padding:14px 22px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    display:inline-block;
+    transition:0.3s;
+}
+
+.instagram a:hover{
+    transform:scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .visit-container{
+        grid-template-columns:1fr;
+    }
+
+    .search-box input{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo-container">
+
+        <img src="logo.png.png" class="logo-img">
+
+        <div class="logo-text">
+            SMV Aroma Café
+        </div>
+
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#visit">Visit Us</a></li>
+    </ul>
+
+</nav>
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img src="logo.png.png" class="hero-logo">
+
+        <h1>SMV Aroma Café</h1>
+
+        <p>
+            Premium Coffee • Pizza • Burgers • Desserts • Snacks • Visakhapatnam
+        </p>
+
+        <button class="hero-btn"
+        onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+            Explore Menu
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= STORY ================= -->
+
+<section id="story">
+
+    <h2 class="title">Our Story 📖</h2>
+
+    <div class="story">
+
+        SMV Aroma Café was founded by three childhood friends in Visakhapatnam who shared a dream of creating a cozy and welcoming café experience.
+
+        During their college days, they spent hours talking about coffee, food, friendship, and life goals in small tea stalls around the city.
+
+        After years of dedication and planning, SMV Aroma Café became a reality.
+
+        Today, the café is known for its premium coffee, delicious pizzas, burgers, desserts, and peaceful atmosphere.
+
+        ☕ “Serve happiness in every cup and every bite.”
+
+    </div>
+
+</section>
+
+<!-- ================= MENU ================= -->
+
+<section id="menu">
+
+    <h2 class="title">Menu 🍽️</h2>
+
+    <div class="search-box">
+
+        <input type="text"
+        id="search"
+        placeholder="Search coffee, pizza, burger..."
+        onkeyup="searchMenu()">
+
+    </div>
+
+    <div class="menu">
+
+        <div class="card"><h3>Espresso ☕</h3><p>Strong coffee shot</p><div class="price">₹90</div><button onclick="add('Espresso')">Add</button></div>
+
+        <div class="card"><h3>Cappuccino ☕</h3><p>Milk foam coffee</p><div class="price">₹120</div><button onclick="add('Cappuccino')">Add</button></div>
+
+        <div class="card"><h3>Cold Coffee 🧋</h3><p>Chilled creamy coffee</p><div class="price">₹150</div><button onclick="add('Cold Coffee')">Add</button></div>
+
+        <div class="card"><h3>Latte ☕</h3><p>Smooth latte</p><div class="price">₹140</div><button onclick="add('Latte')">Add</button></div>
+
+        <div class="card"><h3>Veg Pizza 🍕</h3><p>Loaded pizza</p><div class="price">₹220</div><button onclick="add('Veg Pizza')">Add</button></div>
+
+        <div class="card"><h3>Cheese Pizza 🍕</h3><p>Extra cheese</p><div class="price">₹250</div><button onclick="add('Cheese Pizza')">Add</button></div>
+
+        <div class="card"><h3>Burger 🍔</h3><p>Crispy burger</p><div class="price">₹130</div><button onclick="add('Burger')">Add</button></div>
+
+        <div class="card"><h3>French Fries 🍟</h3><p>Crispy fries</p><div class="price">₹110</div><button onclick="add('Fries')">Add</button></div>
+
+        <div class="card"><h3>Pasta 🍝</h3><p>Creamy pasta</p><div class="price">₹180</div><button onclick="add('Pasta')">Add</button></div>
+
+        <div class="card"><h3>Chocolate Cake 🎂</h3><p>Rich cake</p><div class="price">₹150</div><button onclick="add('Cake')">Add</button></div>
+        <!-- EXTRA MENU ITEMS -->
+
+<div class="card">
+    <h3>Mocha ☕</h3>
+    <p>Chocolate flavored coffee</p>
+    <div class="price">₹160</div>
+    <button onclick="add('Mocha')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Americano ☕</h3>
+    <p>Classic black coffee</p>
+    <div class="price">₹110</div>
+    <button onclick="add('Americano')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Green Tea 🍵</h3>
+    <p>Healthy tea</p>
+    <div class="price">₹70</div>
+    <button onclick="add('Green Tea')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Masala Tea 🍵</h3>
+    <p>Traditional Indian tea</p>
+    <div class="price">₹50</div>
+    <button onclick="add('Masala Tea')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Paneer Pizza 🍕</h3>
+    <p>Loaded paneer pizza</p>
+    <div class="price">₹280</div>
+    <button onclick="add('Paneer Pizza')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Farmhouse Pizza 🍕</h3>
+    <p>Fresh veggie pizza</p>
+    <div class="price">₹300</div>
+    <button onclick="add('Farmhouse Pizza')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Cheese Burger 🍔</h3>
+    <p>Extra cheesy burger</p>
+    <div class="price">₹150</div>
+    <button onclick="add('Cheese Burger')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Veg Sandwich 🥪</h3>
+    <p>Fresh grilled sandwich</p>
+    <div class="price">₹100</div>
+    <button onclick="add('Veg Sandwich')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Garlic Bread 🥖</h3>
+    <p>Cheesy garlic bread</p>
+    <div class="price">₹130</div>
+    <button onclick="add('Garlic Bread')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Peri Peri Fries 🍟</h3>
+    <p>Spicy crispy fries</p>
+    <div class="price">₹140</div>
+    <button onclick="add('Peri Peri Fries')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Brownie 🍰</h3>
+    <p>Chocolate brownie</p>
+    <div class="price">₹120</div>
+    <button onclick="add('Brownie')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Cheese Cake 🍰</h3>
+    <p>Creamy cheesecake</p>
+    <div class="price">₹180</div>
+    <button onclick="add('Cheese Cake')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Vanilla Shake 🥤</h3>
+    <p>Sweet vanilla shake</p>
+    <div class="price">₹120</div>
+    <button onclick="add('Vanilla Shake')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Chocolate Shake 🥤</h3>
+    <p>Rich chocolate shake</p>
+    <div class="price">₹140</div>
+    <button onclick="add('Chocolate Shake')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Strawberry Shake 🍓</h3>
+    <p>Fresh strawberry milkshake</p>
+    <div class="price">₹150</div>
+    <button onclick="add('Strawberry Shake')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Ice Cream 🍨</h3>
+    <p>Vanilla ice cream</p>
+    <div class="price">₹90</div>
+    <button onclick="add('Ice Cream')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Noodles 🍜</h3>
+    <p>Hot spicy noodles</p>
+    <div class="price">₹170</div>
+    <button onclick="add('Noodles')">Add</button>
+</div>
+
+<div class="card">
+    <h3>White Sauce Pasta 🍝</h3>
+    <p>Creamy Italian pasta</p>
+    <div class="price">₹190</div>
+    <button onclick="add('White Sauce Pasta')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Red Sauce Pasta 🍝</h3>
+    <p>Tomato flavored pasta</p>
+    <div class="price">₹180</div>
+    <button onclick="add('Red Sauce Pasta')">Add</button>
+</div>
+
+<div class="card">
+    <h3>Club Sandwich 🥪</h3>
+    <p>Loaded sandwich</p>
+    <div class="price">₹160</div>
+    <button onclick="add('Club Sandwich')">Add</button>
+</div>
+
+    </div>
+
+    <div class="cart" id="cart">
+        🛒 Cart is empty
+    </div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <h2 class="title">Gallery 📸</h2>
+
+    <div class="gallery">
+
+        <img src="cafe.jpeg">
+
+        <img src="cafe.jpg">
+
+        <img src="the-pink-couch-cafeteria-chakan-pune-coffee-shops-4na6ohedbg-250.webp">
+
+        <img src="most-instagrammable-cafes-in-dubai-most-colorful-cafes-in-dubai-most-beautiful-coffee-shops-dubai-pink-cafes-hidden-gems-dubai-1.jpg.webp">
+
+    </div>
+
+</section>
+
+<!-- ================= REVIEWS ================= -->
+
+<section id="reviews">
+
+    <h2 class="title">Reviews ⭐</h2>
+
+    <div id="review-list">
+
+        <div class="review">
+            ⭐ “Best café in Visakhapatnam.” – Riya
+        </div>
+
+        <div class="review">
+            ⭐ “Loved the coffee and pizza!” – Arjun
+        </div>
+        <div class="review">
+            ⭐ “Best food with best taste with affordable price which is prepared deliciously at the moment and the service is the best and the cafe members are even more friendly to communicate. I recommend everyone to try this cafe!” – mounika
+        </div>
+
+    </div>
+
+    <div class="review-form">
+
+        <h3>Add Review</h3>
+
+        <input type="text" id="name" placeholder="Your Name">
+
+        <textarea id="message" rows="4"
+        placeholder="Write your review..."></textarea>
+
+        <button onclick="addReview()">Submit Review</button>
+
+    </div>
+
+</section>
+
+<!-- ================= VISIT ================= -->
+
+<section id="visit">
+
+    <h2 class="title">Visit Us 📍</h2>
+
+    <div class="visit-container">
+
+        <div class="visit-box">
+
+            <h3>SMV Aroma Café</h3>
+
+            <p>📍 Visakhapatnam, Andhra Pradesh</p>
+
+            <p>🕘 9:00 AM - 10:00 PM</p>
+
+            <p>📞 +91 98765 43210</p>
+
+            <p>📧 smvaromacafe@gmail.com</p>
+
+            <div class="instagram">
+
+                <a href="https://www.instagram.com/smv_aromacafe?igsh=MWMwbW9ib3d5c3hmOQ==" target="_blank">
+
+                    Follow Us on Instagram 📸
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <iframe
+        src="https://maps.google.com/maps?q=visakhapatnam&t=&z=13&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 SMV Aroma Café | Visakhapatnam
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+let cart = [];
+
+function add(item){
+
+    cart.push(item);
+
+    document.getElementById("cart").innerHTML =
+    "🛒 " + cart.join(", ");
+
+}
+
+function searchMenu(){
+
+    let input =
+    document.getElementById("search").value.toLowerCase();
+
+    let cards =
+    document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        let text =
+        card.innerText.toLowerCase();
+
+        if(text.includes(input)){
+
+            card.style.display = "block";
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+function addReview(){
+
+    let name =
+    document.getElementById("name").value;
+
+    let message =
+    document.getElementById("message").value;
+
+    if(name && message){
+
+        let div =
+        document.createElement("div");
+
+        div.className = "review";
+
+        div.innerHTML =
+        "⭐ “" + message + "” – " + name;
+
+        document.getElementById("review-list")
+        .appendChild(div);
+
+        document.getElementById("name").value = "";
+
+        document.getElementById("message").value = "";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
